@@ -5,30 +5,23 @@ namespace MethodsExercise3
 {
     class Program
     {
-        static void Main(string[] args)
-        {
-
-            //Write a method to check if an integer(from the user) is in the range -10 to 10.
-
-            var listOfNumber = new List<int>();
-            for (var num = -10; num <= 10; num++)
-
+       
+            static void DisplayMultiplicationTable(int number)
             {
-                listOfNumber.Add(num);
+                //Write a method to display a given integer's multiplication table(from 1 to 12).
 
-            }
-            Console.WriteLine("Type your number");
-            var userInput = int.Parse(Console.ReadLine());
-
-            if (listOfNumber.Contains(userInput))
-            {
-                Console.WriteLine($"{userInput} is in range of -10 to 10.");
-            }
-            else
-            {
-                Console.WriteLine($"{userInput} is not found in the range of -10 to 10.");
+                for (int i = 1; i <= 12; i++)
+                {
+                    Console.WriteLine($"{number} x {i} = {number * i}");
+                }
             }
 
-        }
+            static void Main()
+            {
+                Console.WriteLine("Enter a number to display its multiplication table:");
+
+                int num = Convert.ToInt32(Console.ReadLine());
+                DisplayMultiplicationTable(num);
+            }
     }
 }
